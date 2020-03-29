@@ -11,7 +11,7 @@ let directionNumber;
 let goodDirection = false;
 const directionArray = [0, "south", "east", "west", "north"];
 for (i=0; i<directionArray.length; i++){
-    if (directionArray[i] === toLowerCase(direction)){
+    if (directionArray[i] === direction.toLowerCase()){
         directionNumber = i
     }
 }
@@ -79,15 +79,11 @@ async function loop() {
     }
     for (i = 0; i < departureList.length; i++){
         if (departureList[i].DepartureText == "Due"){
-            console.log("Your departure is due now!  The next scheduled departure is in " + departureList[i+1].DepartureText + ".");
-            return
-        }
-        else if (departureList[i].DepartureText && departureList[i].DepartureText[-1] == "n"){
-            console.log("The next scheduled departure is in " + departureList[i].DepartureText + ".");
+            console.log("Your departure is due now!  Next Departure: " + departureList[i+1].DepartureText);
             return
         }
         else{
-            console.log("The next scheduled departure is at " + departureList[i].DepartureText + ".");
+            console.log("Next Departure: " + departureList[i].DepartureText);
             return
         }
     }
