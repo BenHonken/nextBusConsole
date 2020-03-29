@@ -11,7 +11,7 @@ let directionNumber;
 let goodDirection = false;
 const directionArray = [0, "south", "east", "west", "north"];
 for (i=0; i<directionArray.length; i++){
-    if (directionArray[i] === direction){
+    if (directionArray[i] === toLowerCase(direction)){
         directionNumber = i
     }
 }
@@ -42,7 +42,7 @@ async function loop() {
     }
     const routeList = await getRoutes();
     for (i=0; i<routeList.length; i++){
-        if (routeList[i].Description.includes(route)){
+        if (routeList[i].Description.includes(route) && !goodRoute){
             routeNumber = routeList[i].Route;
             goodRoute = true;
         }
@@ -58,7 +58,7 @@ async function loop() {
         }
     }
     if (!goodDirection){
-        console.log("This route does not go that direction");
+        console.log("This route does not go that direction.  Please ensure that you entered north, south, east, or west.");
         return
     }
     const stopList = await getStops(routeNumber, directionNumber);
