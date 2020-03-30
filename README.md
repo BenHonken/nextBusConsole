@@ -8,3 +8,7 @@ If the route is matched, it will be checked and compared with the direction to e
 If the direction is matched, the stop will be checked.  If the stop does not match, the user will be informed that the stop isn't on this route.  If the stop matches, a list of departures will be gathered.
 
 If the DepartureText of the first element of the departure list reads "Due", the user will be informed that the next departure is due now, and they will also be informed of the time for the following departure.  If the first element reads anything other than "Due", only the first element's depearture text will be displayed.  If there are no elements, the user will be informed that no departures remain for the day.  
+
+Here is a quick demo:
+
+[demo](nextBusConsole.gif)
