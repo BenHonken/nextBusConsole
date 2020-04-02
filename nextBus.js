@@ -63,7 +63,7 @@ async function loop() {
     }
     const stopList = await getStops(routeNumber, directionNumber);
     for (i=0; i<stopList.length; i++){
-        if (stopList[i].Text === stop){
+        if (stopList[i].Text.includes(stop) && !goodStop){
             stopValue = stopList[i].Value;
             goodStop = true;
         }

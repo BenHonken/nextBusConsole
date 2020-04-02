@@ -5,7 +5,7 @@ This app takes exactly 3 parameters.  Any more or less will result in a message 
 
 If the route is matched, it will be checked and compared with the direction to ensure that the route runs that direction.  If the direction does not match, the user will be informed.  
 
-If the direction is matched, the stop will be checked.  If the stop does not match, the user will be informed that the stop isn't on this route.  If the stop matches, a list of departures will be gathered.
+If the direction is matched, the stop will be checked.  If the stop does not find a partial match, the user will be informed that the stop isn't on this route.  If the stop finds matches, the first match will be used to gather a list of departures.
 
 If the DepartureText of the first element of the departure list reads "Due", the user will be informed that the next departure is due now, and they will also be informed of the time for the following departure.  If the first element reads anything other than "Due", only the first element's depearture text will be displayed.  If there are no elements, the user will be informed that no departures remain for the day.  
 
